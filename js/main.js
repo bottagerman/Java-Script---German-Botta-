@@ -12,7 +12,7 @@ do {
 
 do {
     metal = prompt("Ingrese que metal desea vender (Cobre, Bronce, Plomo o Aluminio").toLowerCase();
-} while ((metal != "cobre") && (metal != "bronce") && (metal != "plomo") && (metal != "aluminio"));
+} while ((metal != "cobre") && (metal != "bronce") && (metal != "plomo") && (metal != "aluminio") && (metal != "acero inox") && (metal != "perfil"));
 
 do {
     estado = prompt("Ingrese si el material esta limpio o sucio").toLowerCase();
@@ -29,7 +29,10 @@ let precio_bronce;
 let precio_cobre;
 let precio_aluminio;
 let precio_plomo;
+let precio_perfil;
+let precio_aceroInox;
 
+//Se determina el tipo de cliente 
 
 switch (cliente) {
     case "particular":
@@ -37,41 +40,61 @@ switch (cliente) {
         precio_cobre = 1400;
         precio_aluminio = 200;
         precio_plomo = 250;
+        precio_perfil = 300;
+        precio_aceroInox = 100;
         break;
     case "empresa":
         precio_bronce = 800;
         precio_cobre = 1450;
         precio_aluminio = 250;
         precio_plomo = 300;
+        precio_perfil = 350;
+        precio_aceroInox = 150;
         break;
-
 }
 
 function calculadora(peso, operacion, estado) {
     switch (operacion) {
         case "bronce":
-            if (estado == "sucio"){
+            if (estado == "sucio") {
                 return ((peso - (peso * 0.4)) * precio_bronce);
-            } else{
-            return precio_bronce * peso;}
+            } else {
+                return precio_bronce * peso;
+            }
             break;
         case "cobre":
-            if (estado == "sucio"){
+            if (estado == "sucio") {
                 return ((peso - (peso * 0.6)) * precio_cobre);
-            } else{
-            return precio_cobre * peso;}
+            } else {
+                return precio_cobre * peso;
+            }
             break
         case "aluminio":
-            if (estado == "sucio"){
+            if (estado == "sucio") {
                 return ((peso - (peso * 0.3)) * precio_aluminio);
-            } else{
-            return precio_aluminio * peso;}
+            } else {
+                return precio_aluminio * peso;
+            }
             break
         case "plomo":
-            if (estado == "sucio"){
+            if (estado == "sucio") {
                 return ((peso - (peso * 0.8)) * precio_plomo);
-            } else{
+            } else {
                 return precio_plomo * peso;
+            }
+            break
+        case "Acero Inox":
+            if (estado == "sucio") {
+                return ((peso - (peso * 0.7)) * precio_aceroInox);
+            } else {
+                return precio_aceroInox * peso;
+            }
+            break
+        case "perfil":
+            if (estado == "sucio") {
+                return ((peso - (peso * 0.2)) * precio_perfil);
+            } else {
+                return precio_perfil * peso;
             }
             break
         default:
@@ -87,4 +110,5 @@ function calculadora(peso, operacion, estado) {
 console.log(calculadora(peso, metal, estado));
 alert("Su" + " " + metal + " " + "pesó" + " " + peso + "kg");
 alert("El total de su" + " " + metal + " " + estado + " " + "es" + " " + "$" + calculadora(peso, metal, estado));
-alert ("Muchas gracias por utilizar el simulador!")
+alert("Muchas gracias por utilizar el simulador!")
+
