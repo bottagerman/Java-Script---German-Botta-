@@ -52,27 +52,27 @@ const metales = [
     new material(6, "Acero Inox", precio_aceroInox)
 ]
 //Pregunta el tipo de cliente
-do {
-    cliente = prompt("Ingrese si es particular o si trabaja en una empresa").toLowerCase();
-} while ((cliente != "particular") && (cliente != "empresa"));
-//Pregunta que material quiere vender
-do {
-    nombre_material = prompt("Ingrese que metal desea vender (Cobre, Bronce, Plomo, Aluminio, Perfil o Acero Inox").toLowerCase();
-} while ((nombre_material != "cobre") && (nombre_material != "bronce") && (nombre_material != "plomo") && (nombre_material != "aluminio") && (nombre_material != "acero inox") && (nombre_material != "perfil"));
-//Pregunta si el material esta limpio o sucio
-do {
-    estado = prompt("Ingrese si el material esta limpio o sucio").toLowerCase();
-} while ((estado != "limpio") && (estado != "sucio"));
-//Pregunta que peso tiene el material 
-do {
-    peso = parseFloat(prompt("Ingrese el peso del material (0.100g hasta 300kg)"));
-} while ((peso < 0.1) || (peso > 300));
+//     cliente = prompt("Ingrese si es particular o si trabaja en una empresa").toLowerCase();
+// do {
+// } while ((cliente != "particular") && (cliente != "empresa"));
+// //Pregunta que material quiere vender
+// do {
+    //     nombre_material = prompt("Ingrese que metal desea vender (Cobre, Bronce, Plomo, Aluminio, Perfil o Acero Inox").toLowerCase();
+// } while ((nombre_material != "cobre") && (nombre_material != "bronce") && (nombre_material != "plomo") && (nombre_material != "aluminio") && (nombre_material != "acero inox") && (nombre_material != "perfil"));
+// //Pregunta si el material esta limpio o sucio
+// do {
+//     estado = prompt("Ingrese si el material esta limpio o sucio").toLowerCase();
+// } while ((estado != "limpio") && (estado != "sucio"));
+// //Pregunta que peso tiene el material 
+// do {
+//     peso = parseFloat(prompt("Ingrese el peso del material (0.100g hasta 300kg)"));
+// } while ((peso < 0.1) || (peso > 300));
 
 //Pregunto si desea vender algo mas 
 
 let cuentaMetales = true;
 
-cuentaMetales = confirm("¿Algo mas?");
+//cuentaMetales = confirm("¿Algo mas?");
 
 while (cuentaMetales) {
     let suma_metales = "";
