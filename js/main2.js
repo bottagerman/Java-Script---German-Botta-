@@ -1,3 +1,4 @@
+
 let cliente;
 let nombre_material;
 let estado;
@@ -35,7 +36,7 @@ switch (cliente) {
 
 // Array de los metales 
 
-class Material {
+class material {
     constructor(id, nombre, precio) {
         this.id = id;
         this.nombre = nombre;
@@ -43,12 +44,12 @@ class Material {
     }
 }
 const metales = [
-    new Material(1, "Bronce", precio_bronce),
-    new Material(2, "Cobre", precio_cobre),
-    new Material(3, "Aluminio", precio_aluminio),
-    new Material(4, "Plomo", precio_plomo),
-    new Material(5, "Perfil", precio_perfil),
-    new Material(6, "Acero Inox", precio_aceroInox)
+    new material(1, "Bronce", precio_bronce),
+    new material(2, "Cobre", precio_cobre),
+    new material(3, "Aluminio", precio_aluminio),
+    new material(4, "Plomo", precio_plomo),
+    new material(5, "Perfil", precio_perfil),
+    new material(6, "Acero Inox", precio_aceroInox)
 ]
 //Pregunta el tipo de cliente
 do {
@@ -75,7 +76,7 @@ cuentaMetales = confirm("¿Algo mas?");
 
 while (cuentaMetales) {
     let suma_metales = "";
-    for (let Material of metales) {
+    for (let material of metales) {
         suma_metales += material.id + "-" + material.nombre + " - " + peso + "/n";
     }
 }
@@ -148,4 +149,3 @@ while (cuentaMetales) {
 function buscarMetales(nombre) {
     return metales.find(item => item.nombre === nombre_material);
 }
-function filtrarMetales ()

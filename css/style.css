@@ -1,17 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 *{
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-
+    background-color: rgb(142, 149, 156);
+    
     
 }
 
 h1{
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 40px;
-    color: rgb(61, 61, 255);
+    font-family: 'Staatliches', cursive;
+    font-size: 38px;
+    color: rgba(172, 242, 255, 0.925);
     text-align: center;
     margin-top: 20px;
+
 }
+.container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+select {
+    margin: 30px 25% ;
+    width: 40vw;
+    height: 5vh;
+    margin-top: 20px;
+   
+}
+label{
+    width: 40px;
+}
+
