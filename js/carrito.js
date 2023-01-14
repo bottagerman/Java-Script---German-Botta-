@@ -1,3 +1,4 @@
+
 const guardarMetalesCuenta = (metales) => {
     localStorage.setItem("carrito", JSON.stringify(metales))
 }
@@ -6,10 +7,10 @@ const cargarMetalesCuenta = () => {
     return JSON.parse(localStorage.getItem("carrito")) || []
 }
 
-const agregarCarrito = (id) => {
+const agregarCarrito = (nombre) => {
     const materialCarrito = cargarMetalesCuenta();
     const metales= cargarMetalesCuenta();
-    const material = metales.find(item=>item.id === id);
+    const material = metales.find(item=>item.nombre === nombre);
     materialCarrito.push(metales);
     guardarMetalesCuenta(materialCarrito);
 }
