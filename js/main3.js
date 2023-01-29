@@ -1,3 +1,28 @@
+const peso = document.querySelector("#peso")
+const balanza = document.querySelector("#balanza")
+
+peso.oninput = ( ) => {
+    balanza.innerHTML = peso.value
+}
+
+//Array materiales 
+class material {
+    constructor(id, nombre, precio) {
+      this.id = id;
+      this.nombre = nombre;
+      this.precio = precio;
+    }
+  }
+  
+  const metales = [
+    {id:1, nombre: "Bronce", precio: 0},
+    {id:2, nombre: "Cobre", precio:0 },
+    {id:3, nombre: "Aluminio", precio:0},
+    {id:4, nombre: "Perfil", precio: 0},
+    {id:5, nombre: "Plomo", precio: 0},
+    {id:6, nombre: "Acero Inox", precio:0}
+  ]
+  console.log(metales);
 //Guardado de datos 
 const guardarDatos = () => {
     let cliente = document.getElementById("cliente").value
@@ -7,6 +32,7 @@ const guardarDatos = () => {
     const cuentaMetales = { clienteMetales: cliente, materialMetales: material, estadoMetales: estado, pesoMetales: peso };
     localStorage.setItem("cuentaMetales", JSON.stringify(cuentaMetales));
 }
+ 
 //Recuperacion de datos
 const recuperarDatos = () => {
     const cuentaMetales = JSON.parse(localStorage.getItem("cuentaMetales"));
@@ -20,33 +46,3 @@ const recuperarDatos = () => {
 //Buttons
 document.getElementById("btnGuardarDatos").addEventListener("click", guardarDatos)
 document.getElementById("btnRecuperarDatos").addEventListener("click", recuperarDatos)
-//Procedimiento y calculo 
-
-let precio_bronce;
-let precio_cobre;
-let precio_aluminio;
-let precio_plomo;
-let precio_perfil;
-let precio_aceroInox;
-
-//Se determina el tipo de cliente
-
-switch (cliente) {
-    case "particular":
-        precio_bronce = 750;
-        precio_cobre = 1400;
-        precio_aluminio = 200;
-        precio_plomo = 250;
-        precio_perfil = 300;
-        precio_aceroInox = 100;
-        break;
-    case "empresa":
-        precio_bronce = 800;
-        precio_cobre = 1450;
-        precio_aluminio = 250;
-        precio_plomo = 300;
-        precio_perfil = 350;
-        precio_aceroInox = 150;
-        break;
-}
-console.log(cliente);

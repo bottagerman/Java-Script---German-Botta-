@@ -1,4 +1,4 @@
-
+/* 
 //Simulador de venta de metales no ferrosos (Bronce, Plomo, Aluminio y Cobre)
 
 //Ingreso de datos
@@ -112,4 +112,6 @@ console.log(calculadora(peso, metal, estado));
 alert("Su" + " " + metal + " " + "pesó" + " " + peso + "kg");
 alert("El total de su" + " " + metal + " " + estado + " " + "es" + " " + "$" + calculadora(peso, metal, estado));
 alert("Muchas gracias por utilizar el simulador!")
+
+ */
 
