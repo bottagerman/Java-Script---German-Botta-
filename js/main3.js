@@ -1,28 +1,35 @@
 const peso = document.querySelector("#peso")
 const balanza = document.querySelector("#balanza")
 
-peso.oninput = ( ) => {
+peso.oninput = () => {
     balanza.innerHTML = peso.value
 }
 
 //Array materiales 
 class material {
     constructor(id, nombre, precio) {
-      this.id = id;
-      this.nombre = nombre;
-      this.precio = precio;
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
     }
-  }
-  
-  const metales = [
-    {id:1, nombre: "Bronce", precio: 0},
-    {id:2, nombre: "Cobre", precio:0 },
-    {id:3, nombre: "Aluminio", precio:0},
-    {id:4, nombre: "Perfil", precio: 0},
-    {id:5, nombre: "Plomo", precio: 0},
-    {id:6, nombre: "Acero Inox", precio:0}
-  ]
-  console.log(metales);
+}
+
+let precio_bronce;
+let precio_cobre;
+let precio_aluminio;
+let precio_plomo;
+let precio_perfil;
+let precio_aceroInox;
+
+const metales = [
+    { id: 1, nombre: "Bronce", precio: precio_bronce },
+    { id: 2, nombre: "Cobre", precio: precio_cobre },
+    { id: 3, nombre: "Aluminio", precio: precio_aluminio },
+    { id: 4, nombre: "Perfil", precio: precio_perfil },
+    { id: 5, nombre: "Plomo", precio: precio_plomo },
+    { id: 6, nombre: "Acero Inox", precio: precio_aceroInox }
+]
+
 //Guardado de datos 
 
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -36,15 +43,14 @@ const guardarDatos = () => {
     carrito.push(cuentaMetales);
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
- 
+
 const recuperarDatos = () => {
-    const cuentaMetales = JSON.parse (localStorage.getItem ("carrito"))
     let salida = `<p> Boleta con los datos </p>
     <p> Cliente: <b> ${clienteMetales} </b> <br>
     Material: <b> ${materialMetales} </b><br>
     Estado: <b> ${estadoMetales} </b> <br>
     Peso: <b> ${pesoMetales} </b> </p>`
-    document.getElementById ("resultado").innerHTML = salida
+    document.getElementById("resultado").innerHTML = salida
 }
 //Buttons
 document.getElementById("btnGuardarDatos").addEventListener("click", guardarDatos)
