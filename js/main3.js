@@ -52,6 +52,18 @@ const recuperarDatos = () => {
     Peso: <b> ${pesoMetales} </b> </p>`
     document.getElementById("resultado").innerHTML = salida
 }
+
+function mostrarAlert(){
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Su metal fue cargado a la cuenta ',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    
+}
 //Buttons
 document.getElementById("btnGuardarDatos").addEventListener("click", guardarDatos)
+document.getElementById("btnGuardarDatos").addEventListener("click", mostrarAlert)
 

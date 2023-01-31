@@ -12,7 +12,6 @@ const renderCarrito = () => {
             <td>${metales.materialMetales}</td>
             <td>${metales.estadoMetales}</td>
             <td>${metales.pesoMetales}</td>
-            <td> ${totalCalculo}</td>
 
         </tr>
         </tbody>`
