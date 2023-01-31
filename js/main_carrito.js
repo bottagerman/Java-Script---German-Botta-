@@ -137,9 +137,9 @@ const renderProductos = () => {
     const metales_carrito = cargarMetalesCuenta();
     let salida = "";
 
-
-    for (let cuentaMetales of metales_carrito) {
-        salida = `<table class="table">
+    const cargarMetalesCuenta = () => {
+        const cuentaMetales = JSON.parse(localStorage.getItem("carrito"));
+        let salida = `<table class="table">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -158,12 +158,9 @@ const renderProductos = () => {
         </tr>
         </tbody>
         </table>`
-
-        salida += `</tbody>
-        </table>`;
-
         document.getElementById("resultado").innerHTML = salida;
-
     }
-}
 
+}
+renderCarrito();
+renderProductos();

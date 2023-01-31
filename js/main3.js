@@ -50,3 +50,6 @@ const recuperarDatos = () => {
 //Buttons
 document.getElementById("btnGuardarDatos").addEventListener("click", guardarDatos)
 
+renderProductos();
+
+renderCarrito();
