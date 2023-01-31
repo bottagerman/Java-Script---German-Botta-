@@ -48,8 +48,6 @@ const metales = [
   {id:6, nombre: "Acero Inox", precio: precio_aceroInox}
 ]
 // Storage, cuenta material 
-let metalesJSON = JSON.stringify (metales);
-localStorage.setItem("metales", metalesJSON); 
 
 ;
 

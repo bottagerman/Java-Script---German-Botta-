@@ -16,13 +16,28 @@
     <header>
       <h1>Bienvenidos al simulador de venta de metales no ferrosos</h1>
     </header>
+
+    <table class="table mt-5 col p-7">
+      <thead>
+        <tr class="bg-light p-5">
+          <th scope="col">#</th>
+          <th scope="col">Material</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+    </table>
     <div class="col p-5 bg-light">
       <div id="resultado"></div>
-  </div>
+    </div>
+    <div class="col-md-12 d-flex align-items-center justify-content-end bg-light">
+      <a href="index.html" id="vaciar-carrito" title="Vaciar carrito"><img src="img/tacho-basura.png"
+          alt="Icono del tacho de basura"></a>
+    </div>
   </main>
   <script src="js/carrito.js"></script>
-  <script src="js/main_carrito.js"></script>
-  <script src="js/main3.js"></script>
+
 </body>
 
 </html>

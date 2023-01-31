@@ -25,11 +25,11 @@ class material {
   console.log(metales);
 //Guardado de datos 
 
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const guardarDatos = () => {
     let cliente = document.getElementById("cliente").value
-    let material = document.getElementById("material").value
+    let material = document.getElementById("metales").value
     let estado = document.getElementById("estado").value
     let peso = document.getElementById("peso").value
     const cuentaMetales = { clienteMetales: cliente, materialMetales: material, estadoMetales: estado, pesoMetales: peso };
@@ -37,19 +37,15 @@ const guardarDatos = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
  
-//Recuperacion de datos
 const recuperarDatos = () => {
-    const cuentaMetales = JSON.parse(localStorage.getItem("cuentaMetales"));
-    let salida = `<p> Boleta con los datos: </p>
-    <p> Cliente: <b> ${cuentaMetales.clienteMetales} </b> <br>
-    Metales: <b> ${cuentaMetales.materialMetales}</b> <br>
-    Estado: <b> ${cuentaMetales.estadoMetales} </b> <br>
-    Peso: <b> ${cuentaMetales.pesoMetales} </b> </p>`;
-    document.getElementById("resultado").innerHTML = salida;
+    const cuentaMetales = JSON.parse (localStorage.getItem ("carrito"))
+    let salida = `<p> Boleta con los datos </p>
+    <p> Cliente: <b> ${clienteMetales} </b> <br>
+    Material: <b> ${materialMetales} </b><br>
+    Estado: <b> ${estadoMetales} </b> <br>
+    Peso: <b> ${pesoMetales} </b> </p>`
+    document.getElementById ("resultado").innerHTML = salida
 }
 //Buttons
 document.getElementById("btnGuardarDatos").addEventListener("click", guardarDatos)
 
-renderProductos();
-
-renderCarrito();
