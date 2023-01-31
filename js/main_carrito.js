@@ -115,3 +115,55 @@ alert("Muchas gracias por utilizar el simulador!")
 
  */
 
+//Array materiales 
+class material {
+    constructor(id, nombre, precio) {
+      this.id = id;
+      this.nombre = nombre;
+      this.precio = precio;
+    }
+  }
+  
+  const metales = [
+    {id:1, nombre: "Bronce", precio: 0},
+    {id:2, nombre: "Cobre", precio:0 },
+    {id:3, nombre: "Aluminio", precio:0},
+    {id:4, nombre: "Perfil", precio: 0},
+    {id:5, nombre: "Plomo", precio: 0},
+    {id:6, nombre: "Acero Inox", precio:0}
+  ]
+
+const renderProductos = () => {
+    const metales_carrito = cargarMetalesCuenta();
+    let salida = "";
+
+
+    for (let cuentaMetales of metales_carrito) {
+        salida = `<table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Material</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Precio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>${cuentaMetales.materialMetales}</td>
+            <td>${cuentaMetales.estadoMetales}</td>
+            <td>@${cuentaMetales.pesoMetales}</td>
+        </tr>
+        </tbody>
+        </table>`
+
+        salida += `</tbody>
+        </table>`;
+
+        document.getElementById("resultado").innerHTML = salida;
+
+    }
+}
+
